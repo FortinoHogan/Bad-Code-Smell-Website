@@ -1,13 +1,87 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: var(--body-font);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --blackLM: #232323;
+  --redLM: #F9322C;
+  --whiteLM: #FFFFFF;
+  --blackDM: #171923;
+  --redDM: #FF2D20;
+  --whiteDM: #E7E8F2;
+
+  --body-font: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.redLM {
+  color: var(--redLM);
+}
+
+.blackLM {
+  color: var(--blackLM);
+}
+
+.whiteLM {
+  color: var(--whiteLM);
+}
+
+.redDM {
+  color: var(--redDM);
+}
+
+.blackDM {
+  color: var(--blackDM);
+}
+
+.whiteDM {
+  color: var(--whiteDM);
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 818px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 320px) {
+  html {
+    font-size: 40%;
+  }
 }
