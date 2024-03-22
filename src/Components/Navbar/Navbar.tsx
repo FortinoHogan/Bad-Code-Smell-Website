@@ -16,38 +16,77 @@ const Navbar = () => {
 
   const handleNavContent = () => {
     nav("/content");
-  }
+  };
 
   return (
-    <header className="w-full fixed top-0 left-0 z-50">
-      <nav className="py-8 px-20 flex items-center justify-between">
-        <Anchor href="/" className="redLM font-semibold text-5xl">
+    <header
+      className={`${
+        darkMode ? "bgBlackDM " : "bgWhiteLM"
+      } w-full fixed top-0 left-0 z-50`}
+    >
+      <nav className="pt-10 pb-8 px-20 flex items-center justify-between z-50">
+        <Anchor
+          href="/"
+          className={`${darkMode ? "redDM" : "redLM"} font-semibold text-5xl`}
+        >
           Code Reengineering
         </Anchor>
-        <div className="navMenu" style={{ right: isMenuOpen ? "0" : "-100%" }}>
+        <div
+          className="navMenu"
+          style={{
+            right: isMenuOpen ? "0" : "-100%",
+            backgroundColor: darkMode ? "var(--blackDM)" : "var(--whiteLM)",
+          }}
+        >
           <div className="navList flex gap-20">
-            <Anchor href="/" className="blackLM text-2xl">
+            <Anchor
+              href="/"
+              className={`${
+                darkMode ? "whiteDM" : "blackLM"
+              } text-2xl hover:text-red-500 transition`}
+            >
               Home
             </Anchor>
-            <Anchor href="/" className="blackLM text-2xl">
+            <Anchor
+              href="/"
+              className={`${
+                darkMode ? "whiteDM" : "blackLM"
+              } text-2xl hover:text-red-500 transition`}
+            >
               Repository
             </Anchor>
             <div className="dropdownContainer relative z-10 inline-block">
-              <Button onClick={handleNavContent} text="Content" className="blackLM text-2xl w-fit" />
+              <Button
+                onClick={handleNavContent}
+                text="Content"
+                className={`${
+                  darkMode ? "whiteDM" : "blackLM"
+                } text-2xl w-fit hover:text-red-500 transition`}
+              />
               <div className="dropdownMenus absolute flex flex-col w-72 px-5 rounded-lg">
                 <Anchor
-                  href="/"
-                  className="blackLM text-2xl py-3 w-full border-b-2"
+                  href="/changePreventers"
+                  className={`${
+                    darkMode ? "whiteDM" : "blackLM"
+                  } text-2xl py-3 w-full border-b-2 hover:text-red-500 transition`}
                 >
                   Change Preventers
                 </Anchor>
-                <Anchor href="/" className="blackLM text-2xl py-3 w-full">
+                <Anchor
+                  href="/dispensables"
+                  className={`${
+                    darkMode ? "whiteDM" : "blackLM"
+                  } text-2xl py-3 w-full hover:text-red-500 transition`}
+                >
                   Dispensables
                 </Anchor>
               </div>
             </div>
           </div>
-          <div className="closeBtn text-3xl" onClick={toggleMenu}>
+          <div
+            className={`${darkMode ? "whiteDM" : ""} closeBtn text-3xl`}
+            onClick={toggleMenu}
+          >
             <i className="ri-close-line size-24"></i>
           </div>
         </div>
@@ -57,9 +96,17 @@ const Navbar = () => {
             onChange={toggleDarkMode}
             checked={darkMode}
           ></input>
-          <span className="slider round"></span>
+          <span
+            className="slider round"
+            style={{
+              backgroundColor: darkMode ? "var(--whiteDM)" : "#CCC",
+            }}
+          ></span>
         </label>
-        <div className="hamburgerBtn text-3xl" onClick={toggleMenu}>
+        <div
+          className={`${darkMode ? "whiteDM" : ""} hamburgerBtn text-3xl`}
+          onClick={toggleMenu}
+        >
           <i className="ri-menu-line"></i>
         </div>
       </nav>

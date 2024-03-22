@@ -56,6 +56,32 @@ button {
   color: var(--whiteDM);
 }
 
+.bgBlackDM {
+  background-color: var(--blackDM);
+}
+
+.bgWhiteLM {
+  background-color: var(--whiteLM);
+}
+
+.textRedDM {
+  color: var(--redDM);
+}
+
+.textRedLM {
+  color: var(--redLM);
+}
+
+.bg-radial-gradient {
+  background-image: radial-gradient(50% 50% at 50% 50%, #EB4432 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 85%;
+  }
+}
+
 @media (max-width: 1024px) {
   html {
     font-size: 80%;
@@ -77,6 +103,12 @@ button {
 @media (max-width: 600px) {
   html {
     font-size: 50%;
+  }
+}
+
+@media(max-width: 404px) {
+  html {
+    font-size: 45%;
   }
 }
 

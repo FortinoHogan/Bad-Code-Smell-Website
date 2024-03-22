@@ -4,7 +4,7 @@ import Footer from "../Components/Footer/Footer";
 import { useTheme } from "../Context/DarkModeContext";
 import sr from "../Service/ScrollReveal";
 
-const ContentPage = () => {
+const Dispensables = () => {
   const { darkMode } = useTheme();
 
   useEffect(() => {
@@ -17,7 +17,6 @@ const ContentPage = () => {
     };
     sr.reveal(`.content`, config);
   });
-
   return (
     <div className={`${darkMode ? "bgBlackDM " : ""} min-h-screen`}>
       <Navbar />
@@ -30,7 +29,7 @@ const ContentPage = () => {
         <h1
           className={`${darkMode ? "whiteDM" : "blackLM"} text-7xl font-bold`}
         >
-          Materi
+          Dispensables
         </h1>
       </div>
       <Footer />
@@ -38,4 +37,4 @@ const ContentPage = () => {
   );
 };
 
-export default ContentPage;
+export default Dispensables;

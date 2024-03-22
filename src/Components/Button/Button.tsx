@@ -1,5 +1,6 @@
 import React from "react";
 import { IButton } from "./IButton";
+import { useTheme } from "../../Context/DarkModeContext";
 
 const Button = (props: IButton) => {
   const { text, className, onClick } = props;

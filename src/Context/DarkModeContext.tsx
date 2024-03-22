@@ -12,12 +12,18 @@ type ThemeProviderProps = {
 };
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const [darkMode, setDarkMode] = useState<boolean>(() => {
+    const storedDarkMode = localStorage.getItem("darkMode");
+    return storedDarkMode ? JSON.parse(storedDarkMode) : false;
+  });
 
   const toggleDarkMode = () => {
-    setDarkMode((prev) => !prev);
+    setDarkMode((prev) => {
+      const newDarkMode = !prev;
+      localStorage.setItem("darkMode", JSON.stringify(newDarkMode));
+      return newDarkMode;
+    });
   };
-
   return (
     <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>
       {children}
