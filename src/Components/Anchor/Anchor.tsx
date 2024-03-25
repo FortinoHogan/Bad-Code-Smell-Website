@@ -2,11 +2,11 @@ import React from "react";
 import { IAnchor } from "./IAnchor";
 
 const Anchor = (props: IAnchor) => {
-  const { href, children, className } = props;
+  const { href, children, className, classNameA } = props;
   return (
-    <div className={className}>
-      <a href={href}>{children}</a>
-    </div>
+    <a href={href} className={classNameA}>
+      <div className={className}>{children}</div>
+    </a>
   );
 };
 

@@ -17,10 +17,11 @@ const HomePage = () => {
 
     sr.reveal(`.home`, config);
   });
+  
   return (
     <div className={`${darkMode ? "bgBlackDM " : ""} min-h-screen`}>
       <Navbar />
-      <div className="home flex items-center pt-48 justify-center flex-col gap-5 min-h-screen">
+      <div className="home flex items-center pt-48 justify-center flex-col gap-5 min-h-screen mx-8">
         {darkMode ? (
           ""
         ) : (

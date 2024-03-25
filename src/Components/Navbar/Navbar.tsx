@@ -55,7 +55,7 @@ const Navbar = () => {
             >
               Repository
             </Anchor>
-            <div className="dropdownContainer relative z-10 inline-block">
+            <div className="dropdownContainer relative z-50 inline-block">
               <Button
                 onClick={handleNavContent}
                 text="Content"
@@ -63,7 +63,12 @@ const Navbar = () => {
                   darkMode ? "whiteDM" : "blackLM"
                 } text-2xl w-fit hover:text-red-500 transition`}
               />
-              <div className="dropdownMenus absolute flex flex-col w-72 px-5 rounded-lg">
+              <div
+                className={`${
+                  darkMode ? "bgBlackDM" : "bgWhiteLM"
+                } dropdownMenus absolute flex flex-col w-72 px-5 rounded-lg`}
+                style={{ display: isMenuOpen ? "none" : "" }}
+              >
                 <Anchor
                   href="/changePreventers"
                   className={`${
@@ -90,24 +95,26 @@ const Navbar = () => {
             <i className="ri-close-line size-24"></i>
           </div>
         </div>
-        <label className="switch">
-          <input
-            type="checkbox"
-            onChange={toggleDarkMode}
-            checked={darkMode}
-          ></input>
-          <span
-            className="slider round"
-            style={{
-              backgroundColor: darkMode ? "var(--whiteDM)" : "#CCC",
-            }}
-          ></span>
-        </label>
-        <div
-          className={`${darkMode ? "whiteDM" : ""} hamburgerBtn text-3xl`}
-          onClick={toggleMenu}
-        >
-          <i className="ri-menu-line"></i>
+        <div className="flex items-center gap-10">
+          <label className="switch">
+            <input
+              type="checkbox"
+              onChange={toggleDarkMode}
+              checked={darkMode}
+            ></input>
+            <span
+              className="slider round"
+              style={{
+                backgroundColor: darkMode ? "var(--whiteDM)" : "#CCC",
+              }}
+            ></span>
+          </label>
+          <div
+            className={`${darkMode ? "whiteDM" : ""} hamburgerBtn text-3xl`}
+            onClick={toggleMenu}
+          >
+            <i className="ri-menu-line"></i>
+          </div>
         </div>
       </nav>
     </header>

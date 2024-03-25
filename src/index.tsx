@@ -7,11 +7,13 @@ import { ThemeProvider } from "./Context/DarkModeContext";
 import ContentPage from "./Views/ContentPage";
 import ChangePreventers from "./Views/ChangePreventers";
 import Dispensables from "./Views/Dispensables";
+import NotFoundPage from "./Views/NotFoundPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
+    errorElement: <NotFoundPage />,
   },
   {
     path: "/content",
@@ -21,9 +23,10 @@ const router = createBrowserRouter([
     path: "/changePreventers",
     element: <ChangePreventers />,
   },
-  { path: "/dispensables", 
-    element: <Dispensables /> 
-  }
+  {
+    path: "/dispensables",
+    element: <Dispensables />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

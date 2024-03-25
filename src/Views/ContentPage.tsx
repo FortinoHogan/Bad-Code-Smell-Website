@@ -3,9 +3,13 @@ import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
 import { useTheme } from "../Context/DarkModeContext";
 import sr from "../Service/ScrollReveal";
+import ContentCard from "../Components/ContentCard/ContentCard";
+import { useNavigate } from "react-router-dom";
+import Anchor from "../Components/Anchor/Anchor";
 
 const ContentPage = () => {
   const { darkMode } = useTheme();
+  const nav = useNavigate();
 
   useEffect(() => {
     const config = {
@@ -15,23 +19,75 @@ const ContentPage = () => {
       distance: "100px",
       easing: "ease",
     };
-    sr.reveal(`.content`, config);
+    sr.reveal(`.title`, config);
+    sr.reveal(`.card1`, { ...config, origin: "right", delay: 450 });
+    sr.reveal(`.card2`, { ...config, origin: "left", delay: 450 });
   });
 
   return (
     <div className={`${darkMode ? "bgBlackDM " : ""} min-h-screen`}>
       <Navbar />
-      <div className="content flex items-center justify-center flex-col min-h-screen relative overflow-hidden">
+      <div className="flex items-center justify-center flex-col min-h-screen relative overflow-hidden">
         {darkMode ? (
           ""
         ) : (
           <span className="hidden absolute bg-radial-gradient opacity-[.15] pointer-events-none lg:inline-flex left-[-15%] top-7 w-[640px] h-[640px]"></span>
         )}
         <h1
-          className={`${darkMode ? "whiteDM" : "blackLM"} text-7xl font-bold`}
+          className={`${
+            darkMode ? "whiteDM" : "blackLM"
+          } title mt-48 text-7xl font-bold`}
         >
           Materi
         </h1>
+        <div className="flex items-center flex-col justify-center gap-36 mt-48 w-2/3">
+          <div className="card1 w-full text-start flex flex-col gap-10">
+            <h1
+              className={`${
+                darkMode ? "whiteDM" : "blackLM"
+              } text-5xl font-bold`}
+            >
+              Change Preventers
+            </h1>
+            <p className={`${darkMode ? "whiteDM" : "blackLM"}  text-2xl`}>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Accusamus, maxime?
+            </p>
+            <Anchor
+              href="/changePreventers"
+              className={`${
+                darkMode ? "bg-1A202C" : "bg-white"
+              } card w-fit px-5 py-3 redLM tracking-wider font-bold transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1`}
+              classNameA="group w-fit border border-red-600 focus:outline-none"
+            >
+              VIEW CONTENT
+            </Anchor>
+          </div>
+          <div className="card2 w-full text-end flex flex-col gap-10 self-end">
+            <h1
+              className={`${
+                darkMode ? "whiteDM" : "blackLM"
+              } text-5xl font-bold`}
+            >
+              Dispensables
+            </h1>
+            <p className={`${darkMode ? "whiteDM" : "blackLM"}  text-2xl`}>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Accusamus, maxime?
+            </p>
+            <div className="flex self-end">
+              <Anchor
+                href="/dispensables"
+                className={`${
+                  darkMode ? "bg-1A202C" : "bg-white"
+                } card w-fit px-5 py-3 redLM tracking-wider font-bold transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1`}
+                classNameA="group w-fit border border-red-600 focus:outline-none"
+              >
+                VIEW CONTENT
+              </Anchor>
+            </div>
+          </div>
+        </div>
       </div>
       <Footer />
     </div>

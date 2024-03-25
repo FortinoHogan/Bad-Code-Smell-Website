@@ -22,6 +22,16 @@
   --body-font: 'Poppins', sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background: #1A202C;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--whiteDM);
+  border-radius: 0.5rem;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -64,17 +74,30 @@ button {
   background-color: var(--whiteLM);
 }
 
-.textRedDM {
-  color: var(--redDM);
+.bg-1A202C {
+  background-color: #1A202C;
 }
 
-.textRedLM {
-  color: var(--redLM);
+.bg-redLM {
+  background-color: var(--redLM);
+}
+
+.card {
+  border: var(--redLM) 1px solid;
 }
 
 .bg-radial-gradient {
   background-image: radial-gradient(50% 50% at 50% 50%, #EB4432 0%, rgba(255, 255, 255, 0) 100%);
 }
+
+.transform {
+  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.transition-transform {
+  transition-duration: .15s;
+}
+
 
 @media (max-width: 1200px) {
   html {
