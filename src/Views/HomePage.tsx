@@ -3,6 +3,7 @@ import Navbar from "../Components/Navbar/Navbar";
 import { useTheme } from "../Context/DarkModeContext";
 import sr from "../Service/ScrollReveal";
 import Footer from "../Components/Footer/Footer";
+import ReferenceCard from "../Components/ReferenceCard/ReferenceCard";
 
 const HomePage = () => {
   const { darkMode } = useTheme();
@@ -17,7 +18,7 @@ const HomePage = () => {
 
     sr.reveal(`.home`, config);
   });
-  
+
   return (
     <div className={`${darkMode ? "bgBlackDM " : ""} min-h-screen`}>
       <Navbar />
@@ -50,7 +51,7 @@ const HomePage = () => {
           </p>
         </div>
       </div>
-      <div className="home relative flex items-center justify-center min-h-screen overflow-hidden">
+      <div className="home relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
         {darkMode ? (
           ""
         ) : (
@@ -61,7 +62,20 @@ const HomePage = () => {
         >
           Referensi
         </h1>
-        <div></div>
+        <div className="flex items-center justify-center gap-10 mx-20 mt-16 referenceContainer">
+          <ReferenceCard
+            title="refactoring.guru"
+            img="refactorGuru.png"
+            href="https://refactoring.guru/refactoring/smells"
+            text="For image source"
+          />
+          <ReferenceCard
+            title="github.com"
+            img="github.png"
+            href="https://github.com/FortinoHogan/Bad-Code-Smell"
+            text="For code source"
+          />
+        </div>
       </div>
       <Footer />
     </div>

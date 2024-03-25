@@ -86,6 +86,15 @@ button {
   border: var(--redLM) 1px solid;
 }
 
+.referenceCard {
+  transition: all 150ms ease-in-out;
+}
+
+.referenceCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 5px 0.5px black;
+}
+
 .bg-radial-gradient {
   background-image: radial-gradient(50% 50% at 50% 50%, #EB4432 0%, rgba(255, 255, 255, 0) 100%);
 }
@@ -115,11 +124,19 @@ button {
   html {
     font-size: 70%;
   }
+
+  .referenceImg {
+    width: 75%;
+  }
 }
 
 @media (max-width: 768px) {
   html {
     font-size: 55%;
+  }
+
+  .referenceImg {
+    width: 50%;
   }
 }
 
@@ -127,11 +144,27 @@ button {
   html {
     font-size: 50%;
   }
+
+  .referenceContainer {
+    flex-direction: column;
+  }
+
+  .referenceImg {
+    width: 35%;
+  }
 }
 
 @media(max-width: 404px) {
   html {
     font-size: 45%;
+  }
+
+  .referenceImg {
+    width: 25%;
+  }
+
+  .referenceCard {
+    padding: 1rem 0;
   }
 }
 

@@ -3,4 +3,5 @@ export interface IAnchor {
   children: React.ReactNode;
   className: string;
   classNameA?: string;
+  target?: string;
 }
