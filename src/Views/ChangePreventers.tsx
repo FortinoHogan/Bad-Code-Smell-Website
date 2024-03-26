@@ -5,10 +5,13 @@ import { useTheme } from "../Context/DarkModeContext";
 import sr from "../Service/ScrollReveal";
 import data from "../Service/data";
 import ContentCard from "../Components/ContentCard/ContentCard";
+import Button from "../Components/Button/Button";
+import { CodeBlock, dracula } from "react-code-blocks";
 
 const ChangePreventers = () => {
   const { darkMode } = useTheme();
   const [selectedType, setSelectedType] = useState(null);
+  const [selectedCode, setSelectedCode] = useState(null);
   const filteredData = data.filter((item) => item.id === 1);
 
   useEffect(() => {
@@ -24,6 +27,10 @@ const ChangePreventers = () => {
 
   const handleCardClick = (typeId: any) => {
     setSelectedType(typeId === selectedType ? null : typeId);
+  };
+
+  const handleCodeClick = (codeId: any) => {
+    setSelectedCode(codeId === selectedCode ? null : codeId);
   };
 
   return (
@@ -48,7 +55,10 @@ const ChangePreventers = () => {
               >
                 {data.title}
               </h1>
-              <div className="flex flex-col gap-10 w-full">
+              <p className={`${darkMode ? "whiteDM" : "blackLM"} text-2xl`}>
+                {data.description}
+              </p>
+              <div className="flex flex-col gap-10 w-full mt-10">
                 {data.type.map((typeItem, index) => (
                   <div
                     key={typeItem.id}
@@ -73,13 +83,43 @@ const ChangePreventers = () => {
                         } border-2 rounded-lg w-full p-10 flex flex-col mt-2 gap-5`}
                       >
                         <h1 className="text-4xl font-bold">{typeItem.smell}</h1>
-                        <p>{typeItem.description}</p>
+                        <p className="text-2xl">{typeItem.description}</p>
                         <p className="text-2xl font-bold">Treatment</p>
-                        <ul>
+                        <ul className="flex flex-col gap-2">
                           {typeItem.solution.map((solution, index) => (
-                            <li key={index}>{solution}</li>
+                            <li key={index} className="text-xl">
+                              {solution}
+                            </li>
                           ))}
                         </ul>
+                        <Button
+                          text="View Code Example"
+                          className={`${
+                            darkMode ? "bg-1A202C" : "bg-white"
+                          } card w-fit px-5 py-3 redLM tracking-wider font-bold transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1`}
+                          classNameA="group w-fit border border-red-600 focus:outline-none"
+                          onClick={() => handleCodeClick(typeItem.id)}
+                        />
+                        {selectedCode === typeItem.id && "code" in typeItem && (
+                          <div>
+                            {typeItem.code.map((codeItem, index) => (
+                              <div key={index} className="flex flex-col gap-5">
+                                <p className="text-2xl font-bold">Before</p>
+                                <CodeBlock
+                                  text={codeItem.before}
+                                  language="java"
+                                  theme={dracula}
+                                />
+                                <p className="text-2xl font-bold">After</p>
+                                <CodeBlock
+                                  text={codeItem.after}
+                                  language="java"
+                                  theme={dracula}
+                                />
+                              </div>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     )}
                   </div>

@@ -48,7 +48,7 @@ const Navbar = () => {
               Home
             </Anchor>
             <Anchor
-              href="https://github.com/FortinoHogan/Bad-Code-Smell"
+              href="https://github.com/FortinoHogan/Bad-Code-Smell/tree/main/CodeSmell/src"
               className={`${
                 darkMode ? "whiteDM" : "blackLM"
               } text-2xl hover:text-red-500 transition`}

@@ -34,7 +34,7 @@ const ContentCard = (props: IContentCard) => {
         <img
           src={require(`../../assets/Img/${img}`)}
           alt="image"
-          className="w-60"
+          className="contentImg w-60"
         />
         <div>
           <h1

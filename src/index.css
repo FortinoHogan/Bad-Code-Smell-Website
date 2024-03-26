@@ -36,12 +36,6 @@ html {
   scroll-behavior: smooth;
 }
 
-button {
-  cursor: pointer;
-  border: none;
-  outline: none;
-}
-
 .redLM {
   color: var(--redLM);
 }
@@ -161,6 +155,10 @@ button {
 
   .referenceImg {
     width: 25%;
+  }
+
+  .contentImg {
+    width: 10rem;
   }
 
   .referenceCard {

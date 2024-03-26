@@ -67,12 +67,12 @@ const HomePage = () => {
             title="refactoring.guru"
             img="refactorGuru.png"
             href="https://refactoring.guru/refactoring/smells"
-            text="For image source"
+            text="For image source and content"
           />
           <ReferenceCard
             title="github.com"
             img="github.png"
-            href="https://github.com/FortinoHogan/Bad-Code-Smell"
+            href="https://github.com/mrp130/smell"
             text="For code source"
           />
         </div>

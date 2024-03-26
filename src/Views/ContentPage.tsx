@@ -3,9 +3,9 @@ import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
 import { useTheme } from "../Context/DarkModeContext";
 import sr from "../Service/ScrollReveal";
-import ContentCard from "../Components/ContentCard/ContentCard";
 import { useNavigate } from "react-router-dom";
 import Anchor from "../Components/Anchor/Anchor";
+import data from "../Service/data";
 
 const ContentPage = () => {
   const { darkMode } = useTheme();
@@ -41,43 +41,24 @@ const ContentPage = () => {
           Materi
         </h1>
         <div className="flex items-center flex-col justify-center gap-36 mt-48 w-2/3">
-          <div className="card1 w-full text-start flex flex-col gap-10">
-            <h1
-              className={`${
-                darkMode ? "whiteDM" : "blackLM"
-              } text-5xl font-bold`}
-            >
-              Change Preventers
-            </h1>
-            <p className={`${darkMode ? "whiteDM" : "blackLM"}  text-2xl`}>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Accusamus, maxime?
-            </p>
-            <Anchor
-              href="/changePreventers"
-              className={`${
-                darkMode ? "bg-1A202C" : "bg-white"
-              } card w-fit px-5 py-3 redLM tracking-wider font-bold transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1`}
-              classNameA="group w-fit border border-red-600 focus:outline-none"
-            >
-              VIEW CONTENT
-            </Anchor>
-          </div>
-          <div className="card2 w-full text-end flex flex-col gap-10 self-end">
-            <h1
-              className={`${
-                darkMode ? "whiteDM" : "blackLM"
-              } text-5xl font-bold`}
-            >
-              Dispensables
-            </h1>
-            <p className={`${darkMode ? "whiteDM" : "blackLM"}  text-2xl`}>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Accusamus, maxime?
-            </p>
-            <div className="flex self-end">
+          <div className="card1 flex items-center justify-center w-full">
+            <div className="w-full text-start flex flex-col gap-10">
+              <h1
+                className={`${
+                  darkMode ? "whiteDM" : "blackLM"
+                } text-5xl font-bold`}
+              >
+                Change Preventers
+              </h1>
+              <p
+                className={`${
+                  darkMode ? "whiteDM" : "blackLM"
+                }  text-2xl break-words`}
+              >
+                {data[0].description}
+              </p>
               <Anchor
-                href="/dispensables"
+                href="/changePreventers"
                 className={`${
                   darkMode ? "bg-1A202C" : "bg-white"
                 } card w-fit px-5 py-3 redLM tracking-wider font-bold transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1`}
@@ -85,6 +66,45 @@ const ContentPage = () => {
               >
                 VIEW CONTENT
               </Anchor>
+            </div>
+            <img
+              src={require("../assets/Img/changePreventers.png")}
+              alt="changPreventers"
+              className="w-48"
+            />
+          </div>
+          <div className="card2 flex items-center justify-center w-full gap-3">
+            <img
+              src={require("../assets/Img/dispensables.png")}
+              alt="dispensables"
+              className="w-48"
+            />
+            <div className="w-full text-end flex flex-col gap-10">
+              <h1
+                className={`${
+                  darkMode ? "whiteDM" : "blackLM"
+                } text-5xl font-bold`}
+              >
+                Dispensables
+              </h1>
+              <p
+                className={`${
+                  darkMode ? "whiteDM" : "blackLM"
+                }  text-2xl break-words`}
+              >
+                {data[1].description}
+              </p>
+              <div className="flex self-end">
+                <Anchor
+                  href="/dispensables"
+                  className={`${
+                    darkMode ? "bg-1A202C" : "bg-white"
+                  } card w-fit px-5 py-3 redLM tracking-wider font-bold transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1`}
+                  classNameA="group w-fit border border-red-600 focus:outline-none"
+                >
+                  VIEW CONTENT
+                </Anchor>
+              </div>
             </div>
           </div>
         </div>
