@@ -32,10 +32,10 @@ const HomePage = () => {
           <div className="absolute left-[18%] top-[-15%] -translate-y-12 pointer-events-none">
             <ReactComponent fill="#EB4432" animationDelay={0} />
           </div>
-          <div className="absolute top-[-20%] -translate-y-20 pointer-events-none md:right-1/4">
+          <div className="absolute top-[-20%] right-[25%] -translate-y-20 pointer-events-none">
             <ReactComponent fill="#EB4432" animationDelay={2000} />
           </div>
-          <div className="absolute bottom-[-25%] right-[18%] -translate-y-20 pointer-events-none">
+          <div className="absolute bottom-[-55%] right-[18%] -translate-y-20 pointer-events-none">
             <ReactComponent fill="#EB4432" animationDelay={1000} />
           </div>
           <h1
@@ -69,10 +69,10 @@ const HomePage = () => {
           <span className="hidden absolute bg-radial-gradient opacity-[.15] pointer-events-none lg:inline-flex right-[-20%] top-0 w-[640px] h-[640px]"></span>
         )}
         <div className="relative w-full h-full">
-          <div className="absolute left-[18%] top-0 -translate-y-12 pointer-events-none">
+          <div className="absolute left-[12%] top-0 -translate-y-12 pointer-events-none">
             <ReactComponent fill="#EB4432" animationDelay={0} />
           </div>
-          <div className="absolute bottom-[35%] right-[10%] -translate-y-20 pointer-events-none">
+          <div className="absolute bottom-[-30%] right-[10%] -translate-y-20 pointer-events-none">
             <ReactComponent fill="#EB4432" animationDelay={1000} />
           </div>
           <h1
