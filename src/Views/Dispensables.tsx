@@ -120,6 +120,14 @@ const Dispensables = () => {
                                   language="java"
                                   theme={dracula}
                                 />
+                                <div className="flex flex-col">
+                                  <h1 className="text-4xl font-bold my-5">
+                                    Explanation
+                                  </h1>
+                                  <p className="text-2xl">
+                                    {typeItem.codeDescription}
+                                  </p>
+                                </div>
                               </div>
                             ))}
                           </div>
