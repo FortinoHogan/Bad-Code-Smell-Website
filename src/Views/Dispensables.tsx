@@ -55,7 +55,11 @@ const Dispensables = () => {
               >
                 {data.title}
               </h1>
-              <p className={`${darkMode ? "whiteDM" : "blackLM"} text-2xl`}>
+              <p
+                className={`${
+                  darkMode ? "whiteDM" : "blackLM"
+                } text-2xl tracking-wider`}
+              >
                 {data.description}
               </p>
               <div className="flex flex-col gap-10 w-full mt-10">

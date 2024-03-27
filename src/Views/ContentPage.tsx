@@ -6,6 +6,7 @@ import sr from "../Service/ScrollReveal";
 import { useNavigate } from "react-router-dom";
 import Anchor from "../Components/Anchor/Anchor";
 import data from "../Service/data";
+import ReactComponent from "../assets/Svg/pyramid";
 
 const ContentPage = () => {
   const { darkMode } = useTheme();
@@ -33,14 +34,40 @@ const ContentPage = () => {
         ) : (
           <span className="hidden absolute bg-radial-gradient opacity-[.15] pointer-events-none lg:inline-flex left-[-15%] top-7 w-[640px] h-[640px]"></span>
         )}
-        <h1
+        <div className="title relative w-full h-full">
+          <div className="absolute left-[18%] bottom-[-20%] pointer-events-none">
+            <ReactComponent fill="#EB4432" animationDelay={0} />
+          </div>
+          <div className="absolute bottom-[-25%] right-[18%] -translate-y-20 pointer-events-none">
+            <ReactComponent fill="#EB4432" animationDelay={2000} />
+          </div>
+          <h1
+            className={`${
+              darkMode ? "whiteDM" : "blackLM"
+            } title mt-48 text-7xl font-bold text-center`}
+          >
+            Materi
+          </h1>
+        </div>
+        <p
           className={`${
             darkMode ? "whiteDM" : "blackLM"
-          } title mt-48 text-7xl font-bold`}
+          } title text-2xl my-16 w-2/3 tracking-wider`}
         >
-          Materi
-        </h1>
-        <div className="flex items-center flex-col justify-center gap-36 mt-48 w-2/3">
+          Pada literatur Martin Fowler, kasus smell ini mencakup permasalahan
+          mendasar mengenai code, class, relasi antar class, dan penerapan
+          prinsip OOP yang kurang tepat yang mempersulit programmer dalam
+          menghadapi perubahan. Khususnya pada materi{" "}
+          <span className={`${darkMode ? "redDM" : "blackLM"} font-bold`}>
+            'Change Preventers'
+          </span>{" "}
+          dan{" "}
+          <span className={`${darkMode ? "redDM" : "blackLM"} font-bold`}>
+            'Dispensables'
+          </span>
+          .
+        </p>
+        <div className="flex items-center flex-col justify-center gap-24 w-2/3 mb-16">
           <div className="card1 flex items-center justify-center w-full">
             <div className="w-full text-start flex flex-col gap-10">
               <h1
@@ -53,7 +80,7 @@ const ContentPage = () => {
               <p
                 className={`${
                   darkMode ? "whiteDM" : "blackLM"
-                }  text-2xl break-words`}
+                } text-2xl break-words`}
               >
                 {data[0].description}
               </p>

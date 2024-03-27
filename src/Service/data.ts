@@ -54,6 +54,8 @@ public interface OrderProcessor {
 }`,
           },
         ],
+        codeDescription:
+          "'Order' dibuat agar tidak langsung mengimplementasikan logika untuk membuat dan memproses pesanan, melainkan menggunakan objek 'OrderCreator' dan 'OrderProcessor' yang diimplementasikan melalui interface.",
       },
       {
         id: 2,
@@ -127,6 +129,8 @@ public class UserData {
 }`,
           },
         ],
+        codeDescription:
+          "Logika untuk mengubah data user dipisahkan ke dalam class 'UserData', sehingga jika ada perubahan pada implementasi atau data yang diubah, hanya perlu dilakukan perubahan pada satu tempat yaitu class 'UserData'.",
       },
       {
         id: 3,
@@ -182,6 +186,8 @@ public class UserData {
 }`,
           },
         ],
+        codeDescription:
+          "Class 'Pet' dan 'WildAnimal' diperkenalkan sebagai superclass yang mewakili hirarki parallel antara hewan peliharaan dan hewan liar. Ini membantu mengurangi duplikasi kode dan membuat struktur kelas menjadi lebih jelas.",
       },
     ],
   },
@@ -236,6 +242,8 @@ public class UserData {
 }`,
           },
         ],
+        codeDescription:
+          "Pada class 'Calculator', comments yang tidak digunakan dapat dihapus dan hanya menyisakan comments yang dibutuhkan sehingga code tidak terlalu panjang.",
       },
       {
         id: 2,
@@ -304,6 +312,8 @@ public class UserData {
 }`,
           },
         ],
+        codeDescription:
+          "Dalam contoh setelah refactor, fungsi-fungsi perhitungan luas dan keliling ditempatkan di dalam class 'Circle' dan 'Square' masing-masing, menghilangkan duplikasi kode di class 'ShapeCalculator'",
       },
       {
         id: 3,
@@ -350,6 +360,8 @@ public class UserData {
 }`,
           },
         ],
+        codeDescription:
+          "Dalam contoh sebelum refactor, class 'Employee' hanya memiliki satu fungsi ('getName()') dan tidak ada perilaku atau method lain yang relevan. Setelah refactor, class 'Employee' memiliki method 'getDepartment()' yang memberikan nilai tambah yang lebih besar.",
       },
       {
         id: 4,
@@ -419,6 +431,8 @@ public class UserData {
 }`,
           },
         ],
+        codeDescription:
+          "Dalam contoh sebelum refactor, class 'Person' hanya memiliki atribut dan getter tanpa adanya perilaku atau method lain yang relevan. Setelah refactor, ditambahkan setter untuk memungkinkan perubahan data pada objek 'Person'.",
       },
       {
         id: 5,
@@ -462,6 +476,8 @@ public class UserData {
 }`,
           },
         ],
+        codeDescription:
+          "Dalam refaktorisasi ini, kita menghapus blok if yang kedua dan menggantinya dengan penggunaan variabel 'discountRate' untuk menentukan besarnya diskon, yang kemudian digunakan untuk menghitung 'discountPrice'. Dengan ini, kita menghilangkan dead code dan membuat kode lebih bersih dan efisien.",
       },
       {
         id: 6,
@@ -517,6 +533,8 @@ public class UserData {
 }`,
           },
         ],
+        codeDescription:
+          "Dalam refaktorisasi ini, kita menghapus method 'fly()' karena awalnya method ini dibuat dengan spekulasi bahwa akan ada class Animal yang dapat terbang. Namun ternyata setelah produk berjalan lama, spekulasinya ini tidak terbukti.",
       },
     ],
   },

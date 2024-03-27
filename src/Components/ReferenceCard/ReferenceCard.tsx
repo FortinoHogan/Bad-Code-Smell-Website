@@ -12,7 +12,7 @@ const ReferenceCard = (props: IReferenceCard) => {
         darkMode
           ? "border-[#ff2d20] bg-1A202C whiteDM"
           : "border-[#171923] bg-white"
-      } flex flex-col items-center justify-center p-10 border-2 rounded-lg gap-5 referenceCard`}
+      } flex flex-col items-center justify-center p-10 border-2 rounded-lg gap-5 referenceCard w-fit`}
       href={href}
       target="_blank"
     >
@@ -22,7 +22,7 @@ const ReferenceCard = (props: IReferenceCard) => {
         alt="image"
         className="referenceImg"
       />
-      <p className="text-xl">{text}</p>
+      <p className="text-xl break-words w-80 text-center">{text}</p>
     </Anchor>
   );
 };

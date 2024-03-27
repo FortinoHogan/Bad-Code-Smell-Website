@@ -55,7 +55,11 @@ const ChangePreventers = () => {
               >
                 {data.title}
               </h1>
-              <p className={`${darkMode ? "whiteDM" : "blackLM"} text-2xl`}>
+              <p
+                className={`${
+                  darkMode ? "whiteDM" : "blackLM"
+                } text-2xl tracking-wider`}
+              >
                 {data.description}
               </p>
               <div className="flex flex-col gap-10 w-full mt-10">
@@ -96,7 +100,7 @@ const ChangePreventers = () => {
                           text="View Code Example"
                           className={`${
                             darkMode ? "bg-1A202C" : "bg-white"
-                          } card w-fit px-5 py-3 redLM tracking-wider font-bold transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1`}
+                          } card w-fit px-5 py-3 redLM tracking-wider font-bold transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1`}
                           classNameA="group w-fit border border-red-600 focus:outline-none"
                           onClick={() => handleCodeClick(typeItem.id)}
                         />
@@ -116,6 +120,14 @@ const ChangePreventers = () => {
                                   language="java"
                                   theme={dracula}
                                 />
+                                <div className="flex flex-col">
+                                  <h1 className="text-4xl font-bold my-5">
+                                    Explanation
+                                  </h1>
+                                  <p className="text-2xl">
+                                    {typeItem.codeDescription}
+                                  </p>
+                                </div>
                               </div>
                             ))}
                           </div>
